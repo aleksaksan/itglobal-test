@@ -4,25 +4,32 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   display: grid;
   grid-template-areas: "header header" "aside main";
   grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
   min-height: 100vh;
-  font-size: 8px;
 }
 
 header {
   grid-area: header;
   background-color: #282c34;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
+}
+header > input {
+  padding: 6px 28px 6px 8px;
+  border: solid 1px D5D8DD;
 }
 
 aside {
   grid-area: aside;
   background-color: #61dafb;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 main {
