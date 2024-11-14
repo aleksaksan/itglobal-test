@@ -15,3 +15,67 @@ html {
   display: flex;
   align-items: center;
 }
+
+.btn {
+  background-color: $color-input-background;
+  border: solid 1px $color-border;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border ease-in 0.3s;
+
+  &:hover {
+    border: solid 1px $color-btn-primary;
+  }
+  &:active {
+    border: solid 1px $color-btn-active;
+  }
+}
+
+.btn-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  
+  &>svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    &>svg>path {
+      fill: $color-btn-primary;
+      transition: fill ease-in 0.3s;
+    }
+  }
+  &:active {
+    &>svg>path {
+      fill: $color-btn-active;
+      transition: fill ease-in 0.3s;
+    }
+  }
+}
+
+.search-input {
+  padding: 6px 8px;
+  border: solid 1px $color-border;
+  border-radius: 4px;
+  outline: none;
+  background-color: $color-input-background;
+  transition: border ease-in 0.3s;
+  position: relative;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: $color-text-neutral;
+  }
+
+  &:focus {
+    border: $color-btn-primary 1px solid;
+    padding: 6px 8px;
+  }
+
+  &:not(:focus) {
+    padding: 6px 28px 6px 8px;
+  }
+}

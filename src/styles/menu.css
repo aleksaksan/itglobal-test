@@ -1,0 +1,16 @@
+.main__menu {
+  width: 280px;
+  border: 1px solid #D5D8DD;
+}
+
+.main__menu-search {
+  border: 1px solid #D5D8DD;
+  padding: 1rem;
+}
+.main__menu-search > input {
+  width: 208px;
+}
+.main__menu-search > input:not(:focus) {
+  background: url("../img/icons/Filter.svg") no-repeat right 8px center;
+  background-color: #FCFCFD;
+}/*# sourceMappingURL=menu.css.map */

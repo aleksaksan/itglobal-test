@@ -17,32 +17,17 @@ header {
   border: $color-border solid 1px;
 }
 
+
 .header__wrapper {
   margin-left: auto;
   display: inherit;
+
   &>input {
     margin-right: 16px;
-    padding: 6px 8px;
-    border: solid 1px $color-border;
-    border-radius: 4px;
-    outline: none;
     width: 296px;
-    position: relative;
-    background-color: $color-input-background;
-    transition: border ease-in 0.3s;
-
-    &::placeholder {
-      color: $color-text-neutral;
-    }
-
-    &:focus {
-      border: $color-btn-primary 1px solid;
-      padding: 6px 8px;
-    }
 
     &:not(:focus) {
-      padding: 6px 28px 6px 8px;
-      background: url('../img/icons/SearchInput.svg') no-repeat right 8px center $color-icons-neutral;
+      background: url('../img/icons/SearchInput.svg') no-repeat right 8px center;
       background-color: $color-input-background;
     }
   }
@@ -53,36 +38,10 @@ header {
     width: 32px;
     height: 32px;
     box-sizing: border-box;
-
-    &:hover {
-      &>svg>path {
-        fill: $color-btn-primary;
-        transition: fill ease-in 0.3s;
-      }
-    }
-    &:active {
-      &>svg>path {
-        fill: $color-btn-active;
-        transition: fill ease-in 0.3s;
-      }
-    }
   }
 }
 
-.btn {
-  background-color: $color-input-background;
-  border: solid 1px $color-border;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border ease-in 0.3s;
 
-  &:hover {
-    border: solid 1px $color-btn-primary;
-  }
-  &:active {
-    border: solid 1px $color-btn-active;
-  }
-}
 
 .user-container {
   margin-right: 8px;
@@ -96,12 +55,27 @@ header {
 
 aside {
   grid-area: aside;
-  background-color: #61dafb;
+  background-color: $color-background;
   padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid $color-border;
+  height: auto;
+
+  &>button {
+    border: none;
+    cursor: pointer;
+    background-color: $color-background;
+    font-size: 0;
+    &:hover {
+      transition: border ease-in 0.3s;
+    }
+  }
 }
 
 main {
   grid-area: main;
+  display: flex;
 }
 
 @media (max-width: 767px) {
@@ -111,8 +85,14 @@ main {
     "main main";
   }
 
-  header input {
-    display: none;
+  header {
+    border-left: none;
+    &>svg {
+      display: none;
+    }
+    input {
+      display: none;
+    }
   }
 
   .user-container {
@@ -127,10 +107,10 @@ main {
   }
 
   aside {
-    /* display: contents; */
+    border-right: none;
+    &>.btn-svg:nth-child(2) {
+      display: none;
+    }
   }
 
-  .aside-menu {
-    
-  }
 }

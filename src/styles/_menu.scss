@@ -1,0 +1,54 @@
+@import './colors';
+
+.main__menu {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main__menu-search {
+  border: 1px solid $color-border;
+  padding: 1rem;
+  justify-content: space-between;
+
+  &>input {
+    width: 208px;
+
+    &:not(:focus) {
+      background: url('../img/icons/Filter.svg') no-repeat right 8px center;
+      background-color: $color-input-background;
+    }
+  }
+}
+
+.main__menu-list {
+  list-style: none;
+  border: 1px solid $color-border;
+  height: 100%;
+  padding: 0 16px;
+  
+  &>li {
+    font-size: 14px;
+    line-height: 143%;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: color ease-in 0.1s;
+    &:hover {
+      color: $color-btn-primary;
+      & path {
+        fill: $color-btn-primary;
+      }
+    }
+    &:active {
+      color: $color-btn-active;
+      & path {
+        fill: $color-btn-active;
+      }
+    }
+
+
+    &>div {
+      margin-left: 8px;
+    }
+  }
+}

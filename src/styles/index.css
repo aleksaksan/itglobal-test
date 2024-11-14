@@ -14,6 +14,63 @@ html {
   align-items: center;
 }
 
+.btn {
+  background-color: #FCFCFD;
+  border: solid 1px #D5D8DD;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border ease-in 0.3s;
+}
+.btn:hover {
+  border: solid 1px #0078CF;
+}
+.btn:active {
+  border: solid 1px #005999;
+}
+
+.btn-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+.btn-svg > svg {
+  display: block;
+  margin: 0 auto;
+}
+.btn-svg:hover > svg > path {
+  fill: #0078CF;
+  transition: fill ease-in 0.3s;
+}
+.btn-svg:active > svg > path {
+  fill: #005999;
+  transition: fill ease-in 0.3s;
+}
+
+.search-input {
+  padding: 6px 8px;
+  border: solid 1px #D5D8DD;
+  border-radius: 4px;
+  outline: none;
+  background-color: #FCFCFD;
+  transition: border ease-in 0.3s;
+  position: relative;
+  font-size: 1rem;
+}
+.search-input::-moz-placeholder {
+  color: #ABB1BA;
+}
+.search-input::placeholder {
+  color: #ABB1BA;
+}
+.search-input:focus {
+  border: #0078CF 1px solid;
+  padding: 6px 8px;
+}
+.search-input:not(:focus) {
+  padding: 6px 28px 6px 8px;
+}
+
 body {
   display: grid;
   grid-template-areas: "header header" "aside main";
@@ -35,28 +92,10 @@ header {
 }
 .header__wrapper > input {
   margin-right: 16px;
-  padding: 6px 8px;
-  border: solid 1px #D5D8DD;
-  border-radius: 4px;
-  outline: none;
   width: 296px;
-  position: relative;
-  background-color: #FCFCFD;
-  transition: border ease-in 0.3s;
-}
-.header__wrapper > input::-moz-placeholder {
-  color: #ABB1BA;
-}
-.header__wrapper > input::placeholder {
-  color: #ABB1BA;
-}
-.header__wrapper > input:focus {
-  border: #0078CF 1px solid;
-  padding: 6px 8px;
 }
 .header__wrapper > input:not(:focus) {
-  padding: 6px 28px 6px 8px;
-  background: url("../img/icons/SearchInput.svg") no-repeat right 8px center #ABB1BA;
+  background: url("../img/icons/SearchInput.svg") no-repeat right 8px center;
   background-color: #FCFCFD;
 }
 .header__wrapper .btn {
@@ -65,28 +104,6 @@ header {
   width: 32px;
   height: 32px;
   box-sizing: border-box;
-}
-.header__wrapper .btn:hover > svg > path {
-  fill: #0078CF;
-  transition: fill ease-in 0.3s;
-}
-.header__wrapper .btn:active > svg > path {
-  fill: #00518b;
-  transition: fill ease-in 0.3s;
-}
-
-.btn {
-  background-color: #FCFCFD;
-  border: solid 1px #D5D8DD;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border ease-in 0.3s;
-}
-.btn:hover {
-  border: solid 1px #0078CF;
-}
-.btn:active {
-  border: solid 1px #00518b;
 }
 
 .user-container {
@@ -101,17 +118,37 @@ header {
 
 aside {
   grid-area: aside;
-  background-color: #61dafb;
+  background-color: #FFFFFF;
   padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #D5D8DD;
+  height: auto;
+}
+aside > button {
+  border: none;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  font-size: 0;
+}
+aside > button:hover {
+  transition: border ease-in 0.3s;
 }
 
 main {
   grid-area: main;
+  display: flex;
 }
 
 @media (max-width: 767px) {
   body {
     grid-template-areas: "aside header" "main main";
+  }
+  header {
+    border-left: none;
+  }
+  header > svg {
+    display: none;
   }
   header input {
     display: none;
@@ -124,6 +161,57 @@ main {
     display: none;
   }
   aside {
-    /* display: contents; */
+    border-right: none;
   }
+  aside > .btn-svg:nth-child(2) {
+    display: none;
+  }
+}
+.main__menu {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__menu-search {
+  border: 1px solid #D5D8DD;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.main__menu-search > input {
+  width: 208px;
+}
+.main__menu-search > input:not(:focus) {
+  background: url("../img/icons/Filter.svg") no-repeat right 8px center;
+  background-color: #FCFCFD;
+}
+
+.main__menu-list {
+  list-style: none;
+  border: 1px solid #D5D8DD;
+  height: 100%;
+  padding: 0 16px;
+}
+.main__menu-list > li {
+  font-size: 14px;
+  line-height: 143%;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color ease-in 0.1s;
+}
+.main__menu-list > li:hover {
+  color: #0078CF;
+}
+.main__menu-list > li:hover path {
+  fill: #0078CF;
+}
+.main__menu-list > li:active {
+  color: #005999;
+}
+.main__menu-list > li:active path {
+  fill: #005999;
+}
+.main__menu-list > li > div {
+  margin-left: 8px;
 }/*# sourceMappingURL=index.css.map */
