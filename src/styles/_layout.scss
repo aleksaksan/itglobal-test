@@ -8,16 +8,40 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
   min-height: 100vh;
+  background-color: $color-background;
 }
 
 header {
   grid-area: header;
-  background-color: #282c34;
   padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border: $color-border solid 1px;
 
   &>input {
-    padding: 6px 28px 6px 8px;
+    margin-left: auto;
+    padding: 6px 8px;
     border: solid 1px $color-border;
+    border-radius: 4px;
+    outline: none;
+    width: 296px;
+    position: relative;
+    background-color: $color-input-background;
+
+    &::placeholder {
+      color: $color-text-neutral;
+    }
+
+    &focus {
+      border: $color-btn-primary;
+      padding: 6px 8px;
+    }
+
+    &:not(:focus) {
+      padding: 6px 28px 6px 8px;
+      background: url('../img/icons/SearchInput.svg') no-repeat right 8px center $color-icons-neutral;
+      background-color: $color-input-background;
+    }
   }
 }
 

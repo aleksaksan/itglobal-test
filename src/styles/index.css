@@ -14,16 +14,40 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
   min-height: 100vh;
+  background-color: #FFFFFF;
 }
 
 header {
   grid-area: header;
-  background-color: #282c34;
   padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border: #D5D8DD solid 1px;
 }
 header > input {
+  margin-left: auto;
+  padding: 6px 8px;
+  border: solid 1px #D5D8DD;
+  border-radius: 4px;
+  outline: none;
+  width: 296px;
+  position: relative;
+  background-color: #FCFCFD;
+}
+header > input::-moz-placeholder {
+  color: #ABB1BA;
+}
+header > input::placeholder {
+  color: #ABB1BA;
+}
+header > inputfocus {
+  border: #0078CF;
+  padding: 6px 8px;
+}
+header > input:not(:focus) {
   padding: 6px 28px 6px 8px;
-  border: solid 1px D5D8DD;
+  background: url("../img/icons/SearchInput.svg") no-repeat right 8px center #ABB1BA;
+  background-color: #FCFCFD;
 }
 
 aside {
