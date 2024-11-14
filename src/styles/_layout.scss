@@ -14,12 +14,14 @@ body {
 header {
   grid-area: header;
   padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
   border: $color-border solid 1px;
+}
 
+.header__wrapper {
+  margin-left: auto;
+  display: inherit;
   &>input {
-    margin-left: auto;
+    margin-right: 16px;
     padding: 6px 8px;
     border: solid 1px $color-border;
     border-radius: 4px;
@@ -27,13 +29,14 @@ header {
     width: 296px;
     position: relative;
     background-color: $color-input-background;
+    transition: border ease-in 0.3s;
 
     &::placeholder {
       color: $color-text-neutral;
     }
 
-    &focus {
-      border: $color-btn-primary;
+    &:focus {
+      border: $color-btn-primary 1px solid;
       padding: 6px 8px;
     }
 
@@ -42,6 +45,52 @@ header {
       background: url('../img/icons/SearchInput.svg') no-repeat right 8px center $color-icons-neutral;
       background-color: $color-input-background;
     }
+  }
+
+  .btn {
+    padding: 6px;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+
+    &:hover {
+      &>svg>path {
+        fill: $color-btn-primary;
+        transition: fill ease-in 0.3s;
+      }
+    }
+    &:active {
+      &>svg>path {
+        fill: $color-btn-active;
+        transition: fill ease-in 0.3s;
+      }
+    }
+  }
+}
+
+.btn {
+  background-color: $color-input-background;
+  border: solid 1px $color-border;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border ease-in 0.3s;
+
+  &:hover {
+    border: solid 1px $color-btn-primary;
+  }
+  &:active {
+    border: solid 1px $color-btn-active;
+  }
+}
+
+.user-container {
+  margin-right: 8px;
+  &>img {
+    border-radius: 50%;
+  }
+  &>.user-name {
+    margin-left: 8px;
   }
 }
 
@@ -60,6 +109,21 @@ main {
     grid-template-areas: 
     "aside header"
     "main main";
+  }
+
+  header input {
+    display: none;
+  }
+
+  .user-container {
+    &>img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .user-name {
+    display: none;
   }
 
   aside {

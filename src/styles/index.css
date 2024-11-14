@@ -6,6 +6,12 @@
 
 html {
   font-size: 16px;
+  color: #2E3238;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
 }
 
 body {
@@ -20,12 +26,15 @@ body {
 header {
   grid-area: header;
   padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
   border: #D5D8DD solid 1px;
 }
-header > input {
+
+.header__wrapper {
   margin-left: auto;
+  display: inherit;
+}
+.header__wrapper > input {
+  margin-right: 16px;
   padding: 6px 8px;
   border: solid 1px #D5D8DD;
   border-radius: 4px;
@@ -33,21 +42,61 @@ header > input {
   width: 296px;
   position: relative;
   background-color: #FCFCFD;
+  transition: border ease-in 0.3s;
 }
-header > input::-moz-placeholder {
+.header__wrapper > input::-moz-placeholder {
   color: #ABB1BA;
 }
-header > input::placeholder {
+.header__wrapper > input::placeholder {
   color: #ABB1BA;
 }
-header > inputfocus {
-  border: #0078CF;
+.header__wrapper > input:focus {
+  border: #0078CF 1px solid;
   padding: 6px 8px;
 }
-header > input:not(:focus) {
+.header__wrapper > input:not(:focus) {
   padding: 6px 28px 6px 8px;
   background: url("../img/icons/SearchInput.svg") no-repeat right 8px center #ABB1BA;
   background-color: #FCFCFD;
+}
+.header__wrapper .btn {
+  padding: 6px;
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+}
+.header__wrapper .btn:hover > svg > path {
+  fill: #0078CF;
+  transition: fill ease-in 0.3s;
+}
+.header__wrapper .btn:active > svg > path {
+  fill: #00518b;
+  transition: fill ease-in 0.3s;
+}
+
+.btn {
+  background-color: #FCFCFD;
+  border: solid 1px #D5D8DD;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border ease-in 0.3s;
+}
+.btn:hover {
+  border: solid 1px #0078CF;
+}
+.btn:active {
+  border: solid 1px #00518b;
+}
+
+.user-container {
+  margin-right: 8px;
+}
+.user-container > img {
+  border-radius: 50%;
+}
+.user-container > .user-name {
+  margin-left: 8px;
 }
 
 aside {
@@ -63,6 +112,16 @@ main {
 @media (max-width: 767px) {
   body {
     grid-template-areas: "aside header" "main main";
+  }
+  header input {
+    display: none;
+  }
+  .user-container > img {
+    width: 24px;
+    height: 24px;
+  }
+  .user-name {
+    display: none;
   }
   aside {
     /* display: contents; */
