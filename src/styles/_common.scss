@@ -14,6 +14,13 @@ html {
 .align-center {
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btn {
@@ -28,6 +35,32 @@ html {
   }
   &:active {
     border: solid 1px $color-btn-active;
+  }
+}
+
+.btn-text {
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: $color-text-common;
+  text-wrap: nowrap;
+}
+
+.btn-filled {
+  color: $color-text-inversed;
+  background-color: $color-btn-primary;
+  border-color: $color-btn-primary;
+  transition: all ease-in 0.1s;
+
+  &:hover {
+    background-color: #004679;
+    border-color: #004679;
+  }
+  &:active {
+    background-color: #0068b3;
+    border-color: #0068b3;
   }
 }
 
@@ -56,15 +89,18 @@ html {
   }
 }
 
-.search-input {
-  padding: 6px 8px;
+.input {
+  padding: 6px 0 6px 8px;
   border: solid 1px $color-border;
   border-radius: 4px;
   outline: none;
   background-color: $color-input-background;
   transition: border ease-in 0.3s;
   position: relative;
-  font-size: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-text-common;
+  line-height: 18px;
 
   &::placeholder {
     color: $color-text-neutral;
@@ -72,10 +108,113 @@ html {
 
   &:focus {
     border: $color-btn-primary 1px solid;
-    padding: 6px 8px;
   }
+
+}
+
+.search-input {
+  padding: 6px 8px;
 
   &:not(:focus) {
     padding: 6px 28px 6px 8px;
   }
+}
+
+.text-red {
+  color: $color-text-red;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.badge-container {
+  min-height: 32px;
+  padding: 4px;
+  position: relative;
+  gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  overflow: hidden;
+
+  &:not(:empty) {
+    padding: 4px 16px 4px 4px;
+    .btn-delete {
+      display: block;
+    }
+  }
+}
+
+.btn-delete {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 8px;
+  top: 8px;
+
+  &:hover {
+    path {
+      fill: $color-btn-primary;
+    }
+    transition: fill ease-in 0.3s;
+  }
+  &:active {
+    path {
+      fill: $color-btn-active;
+    }
+    transition: fill ease-in 0.3s;
+  }
+}
+
+.badge {
+  border: 1px solid $color-badge-border;
+  border-radius: 4px;
+  padding: 2px 8px;
+  background-color: $color-badge;;
+  width: fit-content;
+  flex-shrink: 1;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap
+}
+
+.tag {
+  padding: 2px 32px 2px 8px;
+  position: relative;
+}
+
+.btn-tag-delete {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 4px;
+  right: 8px;
+
+  &:hover {
+    path {
+      fill: $color-btn-primary;
+    }
+    transition: fill ease-in 0.3s;
+  }
+  &:active {
+    path {
+      fill: $color-btn-active;
+    }
+    transition: fill ease-in 0.3s;
+  }
+}
+
+.flex-start {
+  display: flex;
+  align-items: start;
+  overflow: hidden;
 }

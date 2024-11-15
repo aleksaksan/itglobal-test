@@ -15,6 +15,10 @@ header {
   grid-area: header;
   padding: 0.5rem 1rem;
   border: $color-border solid 1px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $color-background;
 }
 
 
@@ -108,9 +112,19 @@ main {
 
   aside {
     border-right: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: $color-background;
+    
     &>.btn-svg:nth-child(2) {
       display: none;
     }
   }
+}
 
+#toggle.active {
+  path {
+  fill: #005999;
+  }
 }

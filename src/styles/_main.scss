@@ -1,0 +1,88 @@
+@import './colors';
+
+.main__container {
+  width: 100%;
+  border-top: 1px solid $color-border;
+}
+
+.main__task-panel {
+  width: 100%;
+  padding: 16px;
+  border-bottom: 1px solid transparent;
+  position: sticky;
+  z-index: 10;
+  background-color: $color-background;
+
+
+  h3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-right: 1rem;
+  }
+  
+  .btn-filled {
+    margin-right: 8px;
+  }
+
+  .save-wrapper {
+    margin-left: auto;
+  }
+}
+
+.main__content-container {
+  padding: 0 1rem 1rem;
+  border-top: solid 1px transparent;
+  gap: 16px;
+
+  &>h2 {
+    margin-bottom: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: start;
+  }
+}
+
+.main__grid-container {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.grid {
+  .input {
+    margin-top: 8px;
+    &+ .btn {
+      margin: 8px 0 0 4px;
+      &+.btn {
+        margin: 8px 0 0 4px;
+      }
+    }
+  }
+}
+.grid-elem-wrapper {
+  overflow: hidden;
+}
+
+.btn.plus {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 990px) {
+  .main__grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .save-wrapper {
+    display: none;
+  }
+  .create-container {
+    width: 100%;
+  }
+}
