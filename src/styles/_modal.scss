@@ -1,0 +1,66 @@
+@import './colors';
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(11, 12, 14, 0.4);
+
+  
+  &>.modal__content {
+    padding: 0px 0px 16px 0px;
+    border-radius: 4px;
+    max-width: 800px;
+    background-color: $color-background;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16), 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  .main__grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+body:has(.modal__active) {
+  overflow-y: hidden;
+  
+}
+
+.modal__active {
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.mobile_buttons {
+  display: none;
+}
+
+.mobile-cancel {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile_buttons {
+    display: block;
+    width: 100%;
+
+    & button {
+      width: 100%;
+
+      &+button {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .mobile-cancel {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+}

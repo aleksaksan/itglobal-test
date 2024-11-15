@@ -1,7 +1,7 @@
 `box-shadow: ;`
 
 const header = document.getElementsByTagName('header')[0];
-const taskHeader = document.querySelector('.main__task-panel');
+const taskHeader = document.getElementById('task-panel');
 
 taskHeader.style.top = `${header.offsetHeight}px`;
 
