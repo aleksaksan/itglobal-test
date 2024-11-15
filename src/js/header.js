@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {
 
   if (scrollPosition >= targetPosition) {
     taskHeader.style.boxShadow = '0 4px 4px 0 rgba(0, 0, 0, 0.04)';
-    console.log(header.offsetHeight)
+    
   } else {
     taskHeader.style.boxShadow = '';
   }
